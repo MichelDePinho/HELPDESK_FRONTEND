@@ -1,0 +1,267 @@
+/* ===== Estrutura fixa ===== */
+.home-container {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5f8ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Cabeçalho fixo */
+.home-header {
+  background-color: #f5f8ff;
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d1d9ff;
+  z-index: 10;
+}
+
+.home-title {
+  color: #1a73e8;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* Scroll interno */
+.chamados-scroll {
+  width: 100%;
+  max-width: 800px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 0.5rem;
+}
+
+/* Card - layout em colunas */
+.chamado-card {
+  background-color: #fff;
+  border: 1px solid #d1d9ff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: grid;
+  grid-template-columns: 1fr 140px; /* esquerda flex, centro fixo */
+  gap: 12px;
+  position: relative;
+}
+
+/* para empilhar centro (status) verticalmente */
+.chamado-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* left column */
+.chamado-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* título e descrição */
+.chamado-titulo {
+  color: #2563eb;
+  margin: 0 0 6px 0;
+  font-size: 1.15rem;
+}
+
+.chamado-descricao {
+  color: #374151;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+}
+
+/* categoria e prioridade empilhadas e em negrito */
+.chamado-detalhes-left {
+  display: flex;
+  flex-direction: column; /* agora ficam uma embaixo da outra */
+  gap: 4px;
+  font-size: 0.92rem;
+  color: #444;
+}
+
+.chamado-categoria,
+.chamado-prioridade-label {
+  margin: 0;
+  font-weight: 600; /* em negrito */
+}
+
+.chamado-categoria-val {
+  font-weight: 500;
+  color: #222;
+}
+
+
+/* status */
+.chamado-status {
+  text-align: center;
+  margin: 0;
+  font-size: 0.98rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.status-aberto {
+  color: #16a34a;
+  background: rgba(22,163,74,0.06);
+}
+
+.status-andamento {
+  color: #f97316;
+  background: rgba(249,115,22,0.06);
+}
+
+.status-concluido {
+  color: #2563eb;
+  background: rgba(37,99,235,0.06);
+}
+
+/* Ações centralizadas abaixo do status (span full width) */
+.chamado-actions {
+  grid-column: 1 / -1; /* ocupa as duas colunas na parte inferior */
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* botões */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1665c1;
+}
+
+.btn-trash {
+  background: none;
+  border: none;
+  color: #e63946;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-trash:hover {
+  background-color: rgba(230, 57, 70, 0.08);
+  color: #c1121f;
+  transform: scale(1.05);
+}
+
+.btn-concluir {
+  background: none;
+  border: none;
+  color: #2ca02c;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-concluir:hover {
+  background-color: rgba(44, 160, 44, 0.08);
+  color: #1d7a1d;
+  transform: scale(1.05);
+}
+
+/* direito embaixo do card (menor e com opacidade) */
+.chamado-right-bottom {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  text-align: right;
+  font-size: 0.75rem;
+  color: rgba(0,0,0,0.45); /* opacidade menor */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* pequenas variações (pequena fonte) */
+.chamado-right-bottom .small {
+  font-size: 0.72rem;
+  color: rgba(0,0,0,0.4);
+}
+
+/* Prioridades */
+.prioridade-alta { color: #dc2626; font-weight: 700; }
+.prioridade-media { color: #eab308; font-weight: 600; }
+.prioridade-baixa { color: #22c55e; font-weight: 600; }
+
+/* filtros */
+.filtro-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.filtro-input,
+.filtro-select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.filtro-input:focus,
+.filtro-select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+/* scrollbar */
+.chamados-scroll::-webkit-scrollbar { width: 8px; }
+.chamados-scroll::-webkit-scrollbar-thumb { background: #a2b7ff; border-radius: 6px; }
+.chamados-scroll::-webkit-scrollbar-thumb:hover { background: #7c9eff; }
+
+/* responsividade: em telas pequenas empilha com status embaixo */
+@media (max-width: 640px) {
+  .chamado-card {
+    grid-template-columns: 1fr;
+  }
+
+  .chamado-center {
+    order: 2;
+    margin-top: 6px;
+  }
+
+  .chamado-actions {
+    order: 3;
+  }
+
+  .chamado-right-bottom {
+    position: static;
+    text-align: left;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: rgba(0,0,0,0.45);
+  }
+}

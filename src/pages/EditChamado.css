@@ -1,0 +1,105 @@
+/* EditChamado.css - estilo moderno e centralizado, baseado no NewChamado.css */
+
+.editchamado-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 2rem 1rem;
+  background-color: #f5f8ff;
+  box-sizing: border-box;
+}
+
+/* Card principal */
+.editchamado-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  max-width: 90%;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Título */
+.editchamado-card h2 {
+  color: #1a73e8;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Formulário */
+.editchamado-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Campos */
+.editchamado-form input,
+.editchamado-form textarea,
+.editchamado-form select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d9ff;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.editchamado-form input:focus,
+.editchamado-form textarea:focus,
+.editchamado-form select:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.editchamado-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Botão */
+.editchamado-form button {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.editchamado-form button:hover {
+  background-color: #1665c1;
+  transform: translateY(-1px);
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .editchamado-card {
+    padding: 1.5rem;
+  }
+
+  .editchamado-form button {
+    width: 100%;
+  }
+}

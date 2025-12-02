@@ -1,0 +1,78 @@
+.page {
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f8ff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAV ocupa toda a largura da tela */
+nav.nav {
+  width: 100vw;                  /* força o nav a ocupar a tela toda */
+  display: flex;
+  justify-content: space-between; /* separa esquerda e direita */
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d1d9ff;
+  position: sticky; /* opcional: fixa no topo */
+  top: 0;
+  z-index: 100;
+}
+
+/* Lado esquerdo */
+.nav-left {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Lado direito — empurra pro canto da tela */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto; /* força o bloco à extrema direita */
+}
+
+/* Links */
+.nav-link {
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #1665c1;
+}
+
+/* Botão de logout */
+.nav-button {
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #1665c1;
+}
+
+/* Nome do usuário */
+.user-info {
+  font-weight: 500;
+  color: #2563eb;
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 100vw;
+  padding: 80px 2rem 2rem; /* 👈 ADICIONE esse padding-top (80px ou ajuste) */
+  box-sizing: border-box;
+}
